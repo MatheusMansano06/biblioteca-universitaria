@@ -1,3 +1,4 @@
+// frontend/js/pontuacao.js
 (function () {
   const info = document.getElementById('infoAluno');
   const card = document.getElementById('cardPontuacao');
@@ -24,7 +25,9 @@
       if (!res.ok) throw new Error('Falha ao buscar aluno');
       const aluno = await res.json();
 
-      const total = Number(aluno.total_lidos || 0);
+      // usado antes: aluno.total_lidos
+      const total = Number(aluno.livros_lidos || 0);
+
       const { rotulo, classe } = classificar(total);
 
       info.innerHTML = `
@@ -37,6 +40,7 @@
         <div><span class="badge ${classe}">${rotulo}</span></div>
       `;
     } catch (err) {
+      console.error(err);
       info.innerHTML = `<p style="color:#ef4444">Erro ao carregar pontuação. Tente novamente.</p>`;
     }
   }

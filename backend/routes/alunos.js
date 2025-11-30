@@ -20,11 +20,41 @@ router.get('/', (req, res) => {
 // BUSCAR POR RA (ESSA É A ROTA DO LOGIN/PONTUAÇÃO)
 router.get('/:ra', (req, res) => {
   const { ra } = req.params;
-  const sql = 'SELECT * FROM alunos WHERE ra = ? LIMIT 1';
-  db.query(sql, [ra], (err, results) => {
+
+  const sqlAluno = 'SELECT * FROM alunos WHERE ra = ? LIMIT 1';
+  db.query(sqlAluno, [ra], (err, results) => {
     if (err) return res.status(500).json({ error: 'Erro ao buscar aluno.' });
     if (results.length === 0) return res.status(404).json({ error: 'Aluno não encontrado.' });
-    res.json(results[0]);
+
+    const aluno = results[0];
+
+    // agora vamos contar os livros lidos (emprestimos devolvidos)
+    const sqlPontuacao = `
+      SELECT COUNT(*) AS livros_lidos
+      FROM emprestimos
+      WHERE ra = ? AND status = 'devolvido'
+    `;
+
+    db.query(sqlPontuacao, [ra], (err2, pontosResult) => {
+      if (err2) {
+        console.error('Erro ao calcular pontuação:', err2);
+        return res.status(500).json({ error: 'Erro ao calcular pontuação.' });
+      }
+
+      const livros_lidos = pontosResult[0]?.livros_lidos || 0;
+
+      let classificacao;
+      if (livros_lidos <= 5) classificacao = 'Leitor Iniciante';
+      else if (livros_lidos <= 10) classificacao = 'Leitor Regular';
+      else if (livros_lidos <= 20) classificacao = 'Leitor Ativo';
+      else classificacao = 'Leitor Extremo';
+
+      return res.json({
+        ...aluno,
+        livros_lidos,
+        classificacao
+      });
+    });
   });
 });
 

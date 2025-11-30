@@ -23,3 +23,10 @@ app.listen(PORT, () => {
 // Importa a rota de livros
 const livrosRoutes = require('./routes/livros');
 app.use('/livros', livrosRoutes);
+
+const emprestimosRoutes = require('./routes/emprestimos');
+app.use('/emprestimos', emprestimosRoutes);
+
+const relatoriosRoutes = require('./routes/relatorios');
+app.use('/relatorios', relatoriosRoutes);
+

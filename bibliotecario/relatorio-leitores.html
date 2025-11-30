@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Relatório de Leitores • Bibliotecário</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="tela">
+    <header>
+      <h1>Classificação dos Leitores</h1>
+      <p>Relatório geral de pontuação dos alunos</p>
+    </header>
+
+    <main>
+      <div class="acoes-topo">
+        <a href="index.html" class="btn-voltar">← Voltar ao menu</a>
+      </div>
+
+      <table class="tabela-livros">
+        <thead>
+          <tr>
+            <th>RA</th>
+            <th>Nome</th>
+            <th>Livros lidos</th>
+            <th>Classificação</th>
+          </tr>
+        </thead>
+        <tbody id="tbody-leitores">
+          <!-- preenchido via JS -->
+        </tbody>
+      </table>
+
+      <p id="mensagem" class="mensagem"></p>
+    </main>
+
+    <footer>
+      <small>Relatório de classificação dos leitores</small>
+    </footer>
+  </div>
+
+  <script src="js/relatorio-leitores.js"></script>
+</body>
+</html>

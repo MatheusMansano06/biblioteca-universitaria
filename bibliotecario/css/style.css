@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0f172a; /* Mesmo fundo das outras telas */
+  color: #f1f5f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ============================
+   CONTAINER PRINCIPAL
+============================ */
+.tela {
+  background: #1e293b; 
+  padding: 32px;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #f8fafc;
+  margin-bottom: 10px;
+}
+
+header p {
+  color: #cbd5e1;
+  margin-bottom: 30px;
+}
+
+/* ============================
+   BOTÕES PADRÃO (AZUL)
+============================ */
+.btn-principal {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  background: #3b82f6;        /* Azul — padrão do Totem */
+  border-radius: 10px;
+  text-decoration: none;
+  color: #f8fafc;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  transition: 0.15s ease;
+}
+
+.btn-principal:hover {
+  background: #2563eb;        /* Azul escuro hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59,130,246,0.4);
+}
+
+/* ============================
+   FOOTER
+============================ */
+footer {
+  margin-top: 20px;
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+/* ============================
+   FORMULÁRIOS PADRÃO
+============================ */
+.form-padrao {
+  margin-top: 16px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.campo input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+}
+
+.campo input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px rgba(59,130,246,0.5);
+}
+
+.btn-voltar {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #4b5563;
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.btn-voltar:hover {
+  background: #374151;
+}
+
+.mensagem {
+  min-height: 20px;
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+/* ============================
+   LISTAGEM DE LIVROS
+============================ */
+.acoes-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.tabela-livros {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  background: #020617;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tabela-livros thead {
+  background: #111827;
+}
+
+.tabela-livros th,
+.tabela-livros td {
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.tabela-livros th {
+  font-weight: 600;
+  color: #e5e7eb;
+  border-bottom: 1px solid #1f2937;
+}
+
+.tabela-livros tbody tr:nth-child(even) {
+  background: #020617;
+}
+
+.tabela-livros tbody tr:nth-child(odd) {
+  background: #020617;
+}
+
+.tabela-livros tbody tr:hover {
+  background: #0f172a;
+}
+
+.tabela-livros td {
+  color: #cbd5f5;
+}
+
+.btn-acao {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #3b82f6;
+  color: #f9fafb;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.btn-acao:hover {
+  background: #2563eb;
+}
+
+.btn-acao {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #3b82f6;
+  color: #f9fafb;
+  font-size: 0.8rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-acao:hover {
+  background: #2563eb;
+}
+
+.btn-excluir {
+  background: #ef4444;
+  margin-left: 4px;
+}
+
+.btn-excluir:hover {
+  background: #dc2626;
+}
+

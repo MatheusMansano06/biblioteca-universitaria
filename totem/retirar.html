@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retirar Livro • Totem</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="tela">
+    <header>
+      <h1>Retirada de Livro</h1>
+      <p>Informe os dados para registrar o empréstimo</p>
+    </header>
+
+    <main>
+      <form id="form-retirada" class="form-totem">
+        <div class="campo">
+          <label for="ra">RA do aluno</label>
+          <input type="text" id="ra" name="ra" placeholder="Ex.: 25012345" required />
+        </div>
+
+        <div class="campo">
+          <label for="livroId">ID do livro</label>
+          <input type="number" id="livroId" name="livroId" placeholder="Ex.: 1" required />
+        </div>
+
+        <p class="dica">* A data e hora da retirada serão registradas automaticamente pelo sistema.</p>
+
+        <button type="submit" class="btn-principal">Confirmar retirada</button>
+        <a href="index.html" class="btn-voltar">← Voltar ao menu</a>
+
+        <p id="mensagem" class="mensagem"></p>
+      </form>
+    </main>
+
+    <footer>
+      <small>Totem da Biblioteca • Retirada de Livros</small>
+    </footer>
+  </div>
+
+  <script src="js/retirar.js"></script>
+</body>
+</html>

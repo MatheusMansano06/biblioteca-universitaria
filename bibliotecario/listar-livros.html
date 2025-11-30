@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerenciar Livros • Bibliotecário</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="tela">
+    <header>
+      <h1>Gerenciar Livros</h1>
+      <p>Visualize os livros cadastrados na biblioteca</p>
+    </header>
+
+    <main>
+      <div class="acoes-topo">
+        <a href="cadastrar-livro.html" class="btn-principal">➕ Cadastrar novo livro</a>
+        <a href="index.html" class="btn-voltar">← Voltar ao menu</a>
+      </div>
+
+      <table class="tabela-livros">
+        <thead>
+  <tr>
+    <th>ID</th>
+    <th>Título</th>
+    <th>Autor</th>
+    <th>Categoria</th>
+    <th>Total</th>
+    <th>Disponíveis</th>
+    <th>Emprestados</th>
+    <th>Ações</th>
+  </tr>
+</thead>
+
+        <tbody id="tbody-livros">
+          <!-- Linhas preenchidas via JS -->
+        </tbody>
+      </table>
+
+      <p id="mensagem" class="mensagem"></p>
+    </main>
+
+    <footer>
+      <small>Programa do Bibliotecário • Listagem de livros</small>
+    </footer>
+  </div>
+
+  <script src="js/listar-livros.js"></script>
+</body>
+</html>
